@@ -46,9 +46,12 @@
 
         <div id="info"></div>
         <script>
-            window.onload = function() {
+            function info() {
                 document.getElementById("info").innerText = document.body.clientWidth;
             }
+            window.addEventListener('load', info);
+            window.addEventListener('resize', info);
+            window.addEventListener('orientationchange', info);
         </script>
 
     </div>
