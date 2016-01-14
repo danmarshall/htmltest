@@ -1,0 +1,75 @@
+@font-face {
+  font-family: SegoeUI;
+  src: url("fonts/Segoe-UI/3ca1af51-981a-4e1c-b9c6-a66d0a5fe3c0-2.eot");
+  src: url("fonts/Segoe-UI/3ca1af51-981a-4e1c-b9c6-a66d0a5fe3c0-2.eot") format("embedded-opentype"), url("fonts/Segoe-UI/3ca1af51-981a-4e1c-b9c6-a66d0a5fe3c0-3.woff") format("woff"), url("fonts/Segoe-UI/3ca1af51-981a-4e1c-b9c6-a66d0a5fe3c0-1.ttf") format("truetype"), url("fonts/Segoe-UI/3ca1af51-981a-4e1c-b9c6-a66d0a5fe3c0-4.svg#web") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: SegoeUILight;
+  src: url("fonts/Segoe-UI-Light/45a13f65-5199-4a22-821e-9b7d7795518e-2.eot");
+  src: url("fonts/Segoe-UI-Light/45a13f65-5199-4a22-821e-9b7d7795518e-2.eot") format("embedded-opentype"), url("fonts/Segoe-UI-Light/45a13f65-5199-4a22-821e-9b7d7795518e-3.woff") format("woff"), url("fonts/Segoe-UI-Light/45a13f65-5199-4a22-821e-9b7d7795518e-1.ttf") format("truetype"), url("fonts/Segoe-UI-Light/45a13f65-5199-4a22-821e-9b7d7795518e-4.svg#web") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: SegoeUISemiLight;
+  src: url("fonts/Segoe-UI-Semilight/b692a79e-1bc5-4bcd-b355-7be3ef969fb7-2.eot");
+  src: url("fonts/Segoe-UI-Semilight/b692a79e-1bc5-4bcd-b355-7be3ef969fb7-2.eot") format("embedded-opentype"), url("fonts/Segoe-UI-Semilight/b692a79e-1bc5-4bcd-b355-7be3ef969fb7-3.woff") format("woff"), url("fonts/Segoe-UI-Semilight/b692a79e-1bc5-4bcd-b355-7be3ef969fb7-1.ttf") format("truetype"), url("fonts/Segoe-UI-Semilight/b692a79e-1bc5-4bcd-b355-7be3ef969fb7-4.svg#web") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+/* colors */
+/* reset */
+body {
+  margin: 0;
+}
+body,
+button,
+input,
+select {
+  font-family: 'Segoe UI', sans-serif;
+}
+/* global style */
+.inverse {
+  color: #FFFFFF;
+  background-color: #C52066;
+}
+.ellipsized {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* full-width background */
+html,
+body {
+  overflow-x: hidden;
+}
+header,
+section,
+footer {
+  margin: 0 -9999rem;
+  /* add back section padding value */
+  padding: .25rem 9999rem;
+  width: inherit;
+}
+/* above 1000 */
+.rails {
+  margin: auto;
+  width: 934px;
+}
+/* below 960 */
+@media screen and (max-width: 999px) {
+  .rails {
+    display: block;
+    width: auto;
+    margin-left: 33px;
+    margin-right: 33px;
+  }
+}
+/* small tablets and phone */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: pink;
+  }
+}
