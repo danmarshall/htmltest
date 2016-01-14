@@ -28,7 +28,7 @@ body,
 button,
 input,
 select {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'SegoeUI', sans-serif;
   font-size: 16px;
   letter-spacing: .01em;
 }
