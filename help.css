@@ -28,7 +28,9 @@ body,
 button,
 input,
 select {
-  font-family: 'SegoeUI', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  letter-spacing: .01em;
 }
 /* global style */
 .inverse {
@@ -40,6 +42,11 @@ select {
   white-space: nowrap;
   overflow: hidden;
 }
+#menu a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+/* specialized styles */
 /* full-width background */
 html,
 body {
@@ -53,12 +60,24 @@ footer {
   padding: .25rem 9999rem;
   width: inherit;
 }
+/* end full-width background */
 /* above 1000 */
-.rails {
-  margin: auto;
-  width: 934px;
+@media screen and (min-width: 1000px) {
+  .rails {
+    margin: auto;
+    width: 934px;
+  }
+  #menu {
+    display: inline-block;
+    float: right;
+    margin: 0;
+  }
+  #menu li {
+    display: inline;
+    list-style-type: none;
+  }
 }
-/* below 960 */
+/* below 1000 */
 @media screen and (max-width: 999px) {
   .rails {
     display: block;
