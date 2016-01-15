@@ -91,6 +91,9 @@ footer {
 }
 /* small tablets and phone */
 @media screen and (max-width: 600px) {
+  header {
+    height: 50px;
+  }
   body {
     background-color: pink;
   }
