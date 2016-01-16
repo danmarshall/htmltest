@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calendar.help CSS test</title>
+    <title>help CSS test</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <link href="help.css" rel="stylesheet" />
+    <link href="calendar.help.css" rel="stylesheet" />
+
+    <script>
+
+        function handle() {
+            var c = 'open-menu';
+            var t = document.body.classList;
+            if (t.contains(c)) {
+                t.remove(c);
+            } else {
+                t.add(c);
+            }
+        }
+
+        function wire() {
+            document.querySelector('#menu .icon').addEventListener('click', handle);
+        }
+
+        window.addEventListener('load', wire);
+
+    </script>
+
 </head>
-<body>
+<body class="x">
 
     <div class="rails">
 
-        <header class="full-width-bar inverse">
+        <header class="inverse">
 
             Microsoft
 
-            <ul id="menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#signin">Sign In</a></li>
-            </ul>
+            <div id="menu">
+                <span class="icon">=</span>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#signin">Sign In</a></li>
+                </ul>
+            </div>
 
         </header>
 
@@ -45,9 +70,27 @@
 
         </section>
 
-        <footer></footer>
+        <section>
 
-        <div id="info"></div>
+            bar
+
+        </section>
+
+        <section class="inverse">
+
+            foo
+
+        </section>
+
+
+        <footer>
+            footer
+        </footer>
+
+        <div id="info" style="display:none">
+
+        </div>
+
         <script>
             function info() {
                 document.getElementById("info").innerText = document.body.clientWidth;
