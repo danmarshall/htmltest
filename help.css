@@ -20,7 +20,12 @@
   font-weight: normal;
 }
 /* colors */
+/* variables */
 /* reset */
+html {
+  -webkit-text-size-adjust: 100%;
+  /* Prevent font scaling in landscape while allowing user zoom */
+}
 body {
   margin: 0;
 }
@@ -32,10 +37,27 @@ select {
   font-size: 16px;
   letter-spacing: .01em;
 }
-html {
-    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
-}
 /* global style */
+html,
+body,
+.rails {
+  height: 100%;
+}
+.rails {
+  position: relative;
+}
+footer,
+header,
+section,
+.rails {
+  background-color: #FFFFFF;
+}
+header {
+  height: 2.5rem;
+}
+section {
+  min-height: 13em;
+}
 .inverse {
   color: #FFFFFF;
   background-color: #C52066;
@@ -45,39 +67,37 @@ html {
   white-space: nowrap;
   overflow: hidden;
 }
+#menu ul {
+  margin: 0;
+  padding: 0;
+}
+#menu li {
+  list-style-type: none;
+}
 #menu a {
   color: #FFFFFF;
   text-decoration: none;
 }
 /* specialized styles */
-/* full-width background */
-html,
-body {
-  overflow-x: hidden;
-}
-header,
-section,
-footer {
-  margin: 0 -9999rem;
-  /* add back section padding value */
-  padding: .25rem 9999rem;
-  width: inherit;
-}
-/* end full-width background */
 /* above 1000 */
 @media screen and (min-width: 1000px) {
+  /* full-width background */
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  header,
+  section,
+  footer {
+    margin-left: -9999rem;
+    margin-right: -9999rem;
+    /* add back section padding value */
+    padding-left: 9999rem;
+    padding-right: 9999rem;
+  }
   .rails {
     margin: auto;
-    width: 934px;
-  }
-  #menu {
-    display: inline-block;
-    float: right;
-    margin: 0;
-  }
-  #menu li {
-    display: inline;
-    list-style-type: none;
+    max-width: 934px;
   }
 }
 /* below 1000 */
@@ -85,16 +105,79 @@ footer {
   .rails {
     display: block;
     width: auto;
-    margin-left: 33px;
-    margin-right: 33px;
+    padding-left: 33px;
+    padding-right: 33px;
+  }
+  /* full-width background */
+  header,
+  section,
+  footer {
+    margin-left: -33px;
+    margin-right: -33px;
+    /* add back section padding value */
+    padding-left: 33px;
+    padding-right: 33px;
+  }
+}
+/* NOT (small tablets and phone) */
+@media screen and (min-width: 601px) {
+  #menu {
+    float: right;
+  }
+  #menu > .icon {
+    display: none;
+  }
+  #menu ul {
+    display: inline-block;
+  }
+  #menu li {
+    display: inline;
+  }
+  #menu li:first-child {
+    display: none;
   }
 }
 /* small tablets and phone */
 @media screen and (max-width: 600px) {
-  header {
-    height: 50px;
-  }
   body {
-    background-color: pink;
+    background-color: #7F1C3D;
+  }
+  header {
+    left: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  header + section {
+    padding-top: 2.5rem;
+  }
+  #menu {
+    position: absolute;
+    right: 99px;
+    top: 0;
+  }
+  #menu ul {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -317px;
+    width: 284px;
+  }
+  #menu li {
+    background-color: #7F1C3D;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    display: block;
+    height: 84px;
+    left: 0;
+    line-height: 84px;
+    position: relative;
+  }
+  body.open-menu header {
+    left: -284px;
+  }
+  body.open-menu .rails {
+    left: -284px;
   }
 }
