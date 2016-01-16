@@ -35,6 +35,7 @@ input,
 select {
   font-family: 'SegoeUI', sans-serif;
   font-size: 16px;
+  /* TODO: use T text table */
   letter-spacing: .01em;
 }
 /* global style */
@@ -57,6 +58,7 @@ header {
 }
 section {
   min-height: 13em;
+  /* TODO: temp just to invoke scrollbar behavior for testing  */
 }
 .inverse {
   color: #FFFFFF;
@@ -104,9 +106,9 @@ section {
 @media screen and (max-width: 999px) {
   .rails {
     display: block;
-    width: auto;
     padding-left: 33px;
     padding-right: 33px;
+    width: auto;
   }
   /* full-width background */
   header,
@@ -143,7 +145,6 @@ section {
     background-color: #7F1C3D;
   }
   header {
-    left: 0;
     margin: 0;
     position: fixed;
     top: 0;
@@ -174,10 +175,34 @@ section {
     line-height: 84px;
     position: relative;
   }
+  #menu li a {
+    display: block;
+    padding-left: 40px;
+  }
+  .animate-menu-left {
+    transition: left 0.4s ease;
+  }
+  /* animation initial position */
+  body header {
+    left: 0;
+    transition: left 0.4s ease;
+  }
+  body .rails {
+    left: 0;
+    transition: left 0.4s ease;
+  }
+  body #menu li {
+    left: -284px;
+    transition: left 0.4s ease;
+  }
+  /* animate menu open position */
   body.open-menu header {
     left: -284px;
   }
   body.open-menu .rails {
     left: -284px;
+  }
+  body.open-menu #menu li {
+    left: 0;
   }
 }
