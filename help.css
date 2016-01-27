@@ -180,20 +180,20 @@ section {
     padding-left: 40px;
   }
   .animate-menu-left {
-    transition: left 0.5s ease;
+    transition: left 0.2s ease;
   }
   /* animation initial position */
   body header {
     left: 0;
-    transition: left 0.5s ease;
+    transition: left 0.2s ease;
   }
   body .rails {
     left: 0;
-    transition: left 0.5s ease;
+    transition: left 0.2s ease;
   }
   body #menu li {
     left: -284px;
-    transition: left 0.5s ease;
+    transition: left 0.2s ease;
   }
   /* animate menu open position */
   body.open-menu header {
