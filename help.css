@@ -220,7 +220,7 @@ section {
   }
   body.open-menu > .rails {
     left: -284px;
-    height: 100%;
+    overflow: hidden;
   }
   body.open-menu #menu li {
     left: 0;
