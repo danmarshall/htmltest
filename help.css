@@ -41,11 +41,8 @@ select {
 /* global style */
 html,
 body,
-.rails {
+body > .rails {
   height: 100%;
-}
-.rails {
-  position: relative;
 }
 footer,
 header,
@@ -53,8 +50,13 @@ section,
 .rails {
   background-color: #FFFFFF;
 }
-header {
-  height: 2.5rem;
+header + .rails {
+  /* the rails following the header */
+  position: relative;
+  /* relative positioning for a slide animation */
+}
+header .rails {
+  background-color: inherit;
 }
 section {
   min-height: 13em;
@@ -88,7 +90,13 @@ section {
   body {
     overflow-x: hidden;
   }
-  header,
+  header {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
   section,
   footer {
     margin-left: -9999rem;
@@ -99,11 +107,18 @@ section {
   }
   .rails {
     margin: auto;
-    max-width: 934px;
+    width: 934px;
   }
 }
 /* below 1000 */
 @media screen and (max-width: 999px) {
+  header .rails {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
   .rails {
     display: block;
     padding-left: 33px;
@@ -111,7 +126,6 @@ section {
     width: auto;
   }
   /* full-width background */
-  header,
   section,
   footer {
     margin-left: -33px;
@@ -123,6 +137,12 @@ section {
 }
 /* NOT (small tablets and phone) */
 @media screen and (min-width: 601px) {
+  header .rails {
+    height: 3.5rem;
+  }
+  header + .rails section {
+    margin-top: 3.5rem;
+  }
   #menu {
     float: right;
   }
@@ -141,21 +161,15 @@ section {
 }
 /* small tablets and phone */
 @media screen and (max-width: 600px) {
-  body {
-    background-color: #7F1C3D;
+  header .rails {
+    height: 2.5rem;
   }
-  header {
-    margin: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  header + section {
+  header + .rails section {
     padding-top: 2.5rem;
   }
   #menu {
     position: absolute;
-    right: 99px;
+    right: 33px;
     top: 0;
   }
   #menu ul {
@@ -180,27 +194,33 @@ section {
     padding-left: 40px;
   }
   .animate-menu-left {
-    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1);
+    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1), right 0.35s cubic-bezier(0.2, 0, 0, 1);
   }
   /* animation initial position */
-  body header {
+  body header .rails {
     left: 0;
-    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1);
+    right: 0;
+    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1), right 0.35s cubic-bezier(0.2, 0, 0, 1);
   }
-  body .rails {
+  body > .rails {
     left: 0;
-    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1);
+    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1), right 0.35s cubic-bezier(0.2, 0, 0, 1);
   }
   body #menu li {
     left: -284px;
-    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1);
+    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1), right 0.35s cubic-bezier(0.2, 0, 0, 1);
   }
   /* animate menu open position */
-  body.open-menu header {
-    left: -284px;
+  body.open-menu {
+    background-color: #7F1C3D;
   }
-  body.open-menu .rails {
+  body.open-menu header .rails {
     left: -284px;
+    right: 284px;
+  }
+  body.open-menu > .rails {
+    left: -284px;
+    height: 100%;
   }
   body.open-menu #menu li {
     left: 0;
