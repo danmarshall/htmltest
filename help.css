@@ -207,7 +207,7 @@ section {
     line-height: 24px;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
   header .rails {
     background-color: inherit;
     height: 70px;
