@@ -1,70 +1,132 @@
 @font-face {
-  font-family: SegoeUI;
-  src: url("fonts/Segoe-UI/3ca1af51-981a-4e1c-b9c6-a66d0a5fe3c0-2.eot");
-  src: url("fonts/Segoe-UI/3ca1af51-981a-4e1c-b9c6-a66d0a5fe3c0-2.eot") format("embedded-opentype"), url("fonts/Segoe-UI/3ca1af51-981a-4e1c-b9c6-a66d0a5fe3c0-3.woff") format("woff"), url("fonts/Segoe-UI/3ca1af51-981a-4e1c-b9c6-a66d0a5fe3c0-1.ttf") format("truetype"), url("fonts/Segoe-UI/3ca1af51-981a-4e1c-b9c6-a66d0a5fe3c0-4.svg#web") format("svg");
+  font-family: SegoeUI-Bold;
+  src: url("fonts/Segoe-UI-Latest/Bold/latest.eot");
+  src: url("fonts/Segoe-UI-Latest/Bold/latest.eot") format("embedded-opentype"), url("fonts/Segoe-UI-Latest/Bold/latest.woff") format("woff"), url("fonts/Segoe-UI-Latest/Bold/latest.ttf") format("truetype"), url("fonts/Segoe-UI-Latest/Bold/latest.svg#web") format("svg");
   font-style: normal;
   font-weight: normal;
 }
 @font-face {
-  font-family: SegoeUILight;
-  src: url("fonts/Segoe-UI-Light/45a13f65-5199-4a22-821e-9b7d7795518e-2.eot");
-  src: url("fonts/Segoe-UI-Light/45a13f65-5199-4a22-821e-9b7d7795518e-2.eot") format("embedded-opentype"), url("fonts/Segoe-UI-Light/45a13f65-5199-4a22-821e-9b7d7795518e-3.woff") format("woff"), url("fonts/Segoe-UI-Light/45a13f65-5199-4a22-821e-9b7d7795518e-1.ttf") format("truetype"), url("fonts/Segoe-UI-Light/45a13f65-5199-4a22-821e-9b7d7795518e-4.svg#web") format("svg");
+  font-family: SegoeUI-Normal;
+  src: url("fonts/Segoe-UI-Latest/Normal/latest.eot");
+  src: url("fonts/Segoe-UI-Latest/Normal/latest.eot") format("embedded-opentype"), url("fonts/Segoe-UI-Latest/Normal/latest.woff") format("woff"), url("fonts/Segoe-UI-Latest/Normal/latest.ttf") format("truetype"), url("fonts/Segoe-UI-Latest/Normal/latest.svg#web") format("svg");
   font-style: normal;
   font-weight: normal;
 }
 @font-face {
-  font-family: SegoeUISemiLight;
-  src: url("fonts/Segoe-UI-Semilight/b692a79e-1bc5-4bcd-b355-7be3ef969fb7-2.eot");
-  src: url("fonts/Segoe-UI-Semilight/b692a79e-1bc5-4bcd-b355-7be3ef969fb7-2.eot") format("embedded-opentype"), url("fonts/Segoe-UI-Semilight/b692a79e-1bc5-4bcd-b355-7be3ef969fb7-3.woff") format("woff"), url("fonts/Segoe-UI-Semilight/b692a79e-1bc5-4bcd-b355-7be3ef969fb7-1.ttf") format("truetype"), url("fonts/Segoe-UI-Semilight/b692a79e-1bc5-4bcd-b355-7be3ef969fb7-4.svg#web") format("svg");
+  font-family: SegoeUI-Semibold;
+  src: url("fonts/Segoe-UI-Latest/Semibold/latest.eot");
+  src: url("fonts/Segoe-UI-Latest/Semibold/latest.eot") format("embedded-opentype"), url("fonts/Segoe-UI-Latest/Semibold/latest.woff") format("woff"), url("fonts/Segoe-UI-Latest/Semibold/latest.ttf") format("truetype"), url("fonts/Segoe-UI-Latest/Semibold/latest.svg#web") format("svg");
   font-style: normal;
   font-weight: normal;
 }
-/* colors */
-/* variables */
-/* reset */
+@font-face {
+  font-family: SegoeUI-Semilight;
+  src: url("fonts/Segoe-UI-Latest/Semilight/latest.eot");
+  src: url("fonts/Segoe-UI-Latest/Semilight/latest.eot") format("embedded-opentype"), url("fonts/Segoe-UI-Latest/Semilight/latest.woff") format("woff"), url("fonts/Segoe-UI-Latest/Semilight/latest.ttf") format("truetype"), url("fonts/Segoe-UI-Latest/Semilight/latest.svg#web") format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+.h1 {
+  font-family: SegoeUI-Semibold;
+  font-size: 34px;
+  letter-spacing: 0.3px;
+  line-height: 44px;
+}
+.h2 {
+  font-family: SegoeUI-Semibold;
+  font-size: 30px;
+  letter-spacing: 0.2px;
+  line-height: 39px;
+}
+.h3 {
+  font-family: SegoeUI-Semibold;
+  font-size: 22px;
+  letter-spacing: 0.1px;
+  line-height: 29px;
+}
+.h4 {
+  font-family: SegoeUI-Normal;
+  font-size: 20px;
+  letter-spacing: 0.1px;
+  line-height: 26px;
+}
+.T1 {
+  font-family: SegoeUI-Semibold;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.T2 {
+  font-family: SegoeUI-Semibold;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: 21px;
+}
+.T3 {
+  font-family: SegoeUI-Normal;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  line-height: 21px;
+}
+.T4 {
+  font-family: SegoeUI-Normal;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  line-height: 18px;
+}
+.T5 {
+  font-family: SegoeUI-Normal;
+  font-size: 10px;
+  letter-spacing: 0.34px;
+  line-height: 13px;
+}
 html {
   -webkit-text-size-adjust: 100%;
-  /* Prevent font scaling in landscape while allowing user zoom */
 }
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 body,
 button,
 input,
 select {
-  font-family: 'SegoeUI', sans-serif;
+  font-family: SegoeUI-Normal, sans-serif;
   font-size: 16px;
-  /* TODO: use T text table */
   letter-spacing: .01em;
 }
-/* global style */
 html,
 body,
-body > .rails {
+main {
   height: 100%;
 }
-footer,
 header,
+footer,
 section,
-.rails {
+main {
   background-color: #FFFFFF;
 }
-header + .rails {
-  /* the rails following the header */
-  position: relative;
-  /* relative positioning for a slide animation */
+header svg,
+footer svg,
+section svg,
+main svg {
+  fill: #FF387B;
 }
-header .rails {
-  background-color: inherit;
+header .logo {
+  margin-top: 25px;
+}
+main {
+  position: relative;
 }
 section {
   min-height: 13em;
-  /* TODO: temp just to invoke scrollbar behavior for testing  */
 }
 .inverse {
   color: #FFFFFF;
   background-color: #C52066;
+}
+.inverse svg {
+  fill: #FFFFFF;
 }
 .ellipsized {
   text-overflow: ellipsis;
@@ -82,69 +144,37 @@ section {
   color: #FFFFFF;
   text-decoration: none;
 }
-/* specialized styles */
-/* above 1000 */
 @media screen and (min-width: 1000px) {
-  /* full-width background */
-  html,
-  body {
-    overflow-x: hidden;
-  }
-  header {
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 1;
-  }
-  section,
-  footer {
-    margin-left: -9999rem;
-    margin-right: -9999rem;
-    /* add back section padding value */
-    padding-left: 9999rem;
-    padding-right: 9999rem;
-  }
   .rails {
     margin: auto;
     width: 934px;
   }
 }
-/* below 1000 */
 @media screen and (max-width: 999px) {
-  header .rails {
+  .rails {
+    margin-left: 33px;
+    margin-right: 33px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 601px) {
+  header {
+    min-height: 70px;
     left: 0;
     position: fixed;
     right: 0;
     top: 0;
     z-index: 1;
   }
-  .rails {
-    display: block;
-    padding-left: 33px;
-    padding-right: 33px;
-    width: auto;
+  main > section {
+    margin-top: 70px;
   }
-  /* full-width background */
-  section,
-  footer {
-    margin-left: -33px;
-    margin-right: -33px;
-    /* add back section padding value */
-    padding-left: 33px;
-    padding-right: 33px;
-  }
-}
-/* NOT (small tablets and phone) */
-@media screen and (min-width: 601px) {
-  header .rails {
-    height: 3.5rem;
-  }
-  header + .rails section {
-    margin-top: 3.5rem;
+  body.scrolled header {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.12), 0 4px 4px 0 rgba(0, 0, 0, 0.24);
   }
   #menu {
     float: right;
+    margin-top: 20px;
   }
   #menu > .icon {
     display: none;
@@ -154,30 +184,58 @@ section {
   }
   #menu li {
     display: inline;
+    margin-left: 25px;
   }
   #menu li:first-child {
     display: none;
   }
+  #menu a {
+    font-family: SegoeUI-Semibold;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+  }
 }
-/* small tablets and phone */
 @media screen and (max-width: 600px) {
   header .rails {
-    height: 2.5rem;
+    background-color: inherit;
+    height: 70px;
+    left: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 33px;
+    position: fixed;
+    right: 0;
+    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1), right 0.35s cubic-bezier(0.2, 0, 0, 1);
+    z-index: 1;
   }
-  header + .rails section {
-    padding-top: 2.5rem;
+  main {
+    left: 0;
+    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1);
+  }
+  main > section {
+    padding-top: 70px;
+  }
+  body.scrolled header .rails {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.12), 0 4px 4px 0 rgba(0, 0, 0, 0.24);
   }
   #menu {
     position: absolute;
     right: 33px;
     top: 0;
   }
+  #menu > .icon {
+    position: relative;
+    top: 23px;
+  }
   #menu ul {
+    background-color: #7F1C3D;
     display: block;
     overflow: hidden;
+    padding-bottom: 99rem;
     position: absolute;
-    top: 0;
     right: -317px;
+    top: 0;
     width: 284px;
   }
   #menu li {
@@ -185,42 +243,28 @@ section {
     border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     display: block;
     height: 84px;
-    left: 0;
+    left: -284px;
     line-height: 84px;
     position: relative;
+    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1);
   }
   #menu li a {
+    font-family: SegoeUI-Semibold;
+    font-size: 22px;
+    letter-spacing: 0.1px;
+    line-height: 29px;
     display: block;
+    padding-bottom: 30px;
     padding-left: 40px;
-  }
-  .animate-menu-left {
-    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1), right 0.35s cubic-bezier(0.2, 0, 0, 1);
-  }
-  /* animation initial position */
-  body header .rails {
-    left: 0;
-    right: 0;
-    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1), right 0.35s cubic-bezier(0.2, 0, 0, 1);
-  }
-  body > .rails {
-    left: 0;
-    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1), right 0.35s cubic-bezier(0.2, 0, 0, 1);
-  }
-  body #menu li {
-    left: -284px;
-    transition: left 0.35s cubic-bezier(0.2, 0, 0, 1), right 0.35s cubic-bezier(0.2, 0, 0, 1);
-  }
-  /* animate menu open position */
-  body.open-menu {
-    background-color: #7F1C3D;
+    padding-top: 25px;
+    width: 100%;
   }
   body.open-menu header .rails {
     left: -284px;
     right: 284px;
   }
-  body.open-menu > .rails {
+  body.open-menu main {
     left: -284px;
-    overflow: hidden;
   }
   body.open-menu #menu li {
     left: 0;
