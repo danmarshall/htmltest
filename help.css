@@ -100,12 +100,15 @@ body,
 main {
   height: 100%;
 }
+body,
 header,
 footer,
 section,
 main {
   background-color: #FFFFFF;
+  color: #212121;
 }
+body svg,
 header svg,
 footer svg,
 section svg,
