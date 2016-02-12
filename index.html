@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width" />
+    <title>loading</title>
+
+    <style type="text/css">
+/*
+    This file is meant to be inlined in the loading screen
+*/
+#logo-spinner {
+  display: none;
+}
+body.loading {
+  background-color: #C52066;
+  margin: 0;
+  padding: 0;
+}
+body.loading .app {
+  display: none;
+}
+body.loading #logo-spinner {
+  display: block;
+  height: 260px;
+  overflow: visible;
+  position: fixed;
+  top: 25%;
+  width: 100%;
+}
+@-webkit-keyframes smallrotate {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  67% {
+    -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+  }
+  100% {
+    -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+  }
+}
+@keyframes smallrotate {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  67% {
+    -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+  }
+  100% {
+    -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+  }
+}
+@-webkit-keyframes largerotate {
+  0% {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  84% {
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+  }
+  100% {
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+  }
+}
+@keyframes largerotate {
+  0% {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  84% {
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+  }
+  100% {
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+  }
+}
+#logo-spinner rect {
+  fill: #FFFFFF;
+  opacity: 0.7;
+  -webkit-transform-origin: 50px 50px;
+          transform-origin: 50px 50px;
+}
+#logo-spinner #oval1 {
+  -webkit-animation: smallrotate 2s cubic-bezier(0.6, 0, 0.2, 1) infinite;
+          animation: smallrotate 2s cubic-bezier(0.6, 0, 0.2, 1) infinite;
+}
+#logo-spinner #oval2 {
+  -webkit-animation: largerotate 2s cubic-bezier(0.7, 0, 0.2, 1) infinite;
+          animation: largerotate 2s cubic-bezier(0.7, 0, 0.2, 1) infinite;
+}
+
+    </style>
+
+</head>
+<body class="loading">
+
+    <kobe-app class="app"></kobe-app>
+
+    <svg id="logo-spinner" viewBox="-198 -120 457 340">
+        <rect id="oval1" rx="50" ry="50" width="165" height="100" transform="rotate(315 50 50)" />
+        <rect id="oval2" rx="50" ry="50" width="220" height="100" transform="rotate(225 50 50)" />
+    </svg>
+
+</body>
+</html>
