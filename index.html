@@ -3,7 +3,7 @@
 <head>
     <base href="/" />
     <meta name="viewport" content="width=device-width" />
-    <title>loading</title>
+    <title>Calendar.help</title>
 
     <style type="text/css">
 /*
@@ -22,74 +22,82 @@ body.loading .app {
 }
 body.loading #logo-spinner {
   display: block;
-  height: 130px;
-  margin-left: -10px;
-  overflow: visible;
+  left: 50%;
   position: fixed;
   top: 25%;
-  width: 100%;
 }
 @-webkit-keyframes smallrotate {
   0% {
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   67% {
-    -webkit-transform: rotate(315deg);
-            transform: rotate(315deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
   100% {
-    -webkit-transform: rotate(315deg);
-            transform: rotate(315deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 @keyframes smallrotate {
   0% {
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   67% {
-    -webkit-transform: rotate(315deg);
-            transform: rotate(315deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
   100% {
-    -webkit-transform: rotate(315deg);
-            transform: rotate(315deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 @-webkit-keyframes largerotate {
   0% {
-    -webkit-transform: rotate(-135deg);
-            transform: rotate(-135deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   84% {
-    -webkit-transform: rotate(225deg);
-            transform: rotate(225deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
   100% {
-    -webkit-transform: rotate(225deg);
-            transform: rotate(225deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 @keyframes largerotate {
   0% {
-    -webkit-transform: rotate(-135deg);
-            transform: rotate(-135deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   84% {
-    -webkit-transform: rotate(225deg);
-            transform: rotate(225deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
   100% {
-    -webkit-transform: rotate(225deg);
-            transform: rotate(225deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
+}
+#logo-spinner {
+  margin-left: -10px;
+  -webkit-transform: scale(0.4);
+          transform: scale(0.4);
+}
+#logo-spinner svg {
+  position: absolute;
+  overflow: visible;
+  -webkit-transform-origin: 50px 50px;
+          transform-origin: 50px 50px;
+  margin-left: -31px;
+  margin-top: -7px;
 }
 #logo-spinner rect {
   fill: #FFFFFF;
   opacity: 0.7;
-  -webkit-transform-origin: 50px 50px;
-          transform-origin: 50px 50px;
 }
 #logo-spinner #oval1 {
   -webkit-animation: smallrotate 2s cubic-bezier(0.6, 0, 0.2, 1) infinite;
@@ -100,6 +108,7 @@ body.loading #logo-spinner {
           animation: largerotate 2s cubic-bezier(0.7, 0, 0.2, 1) infinite;
 }
 
+
     </style>
 
 </head>
@@ -107,10 +116,15 @@ body.loading #logo-spinner {
 
     <kobe-app class="app"></kobe-app>
 
-    <svg id="logo-spinner" viewBox="-198 -120 457 340">
-        <rect id="oval1" rx="50" ry="50" width="165" height="100" transform="rotate(315 50 50)" />
-        <rect id="oval2" rx="50" ry="50" width="220" height="100" transform="rotate(225 50 50)" />
-    </svg>
+    <div id="logo-spinner">
+        <svg id="oval1">
+            <rect rx="50" ry="50" width="165" height="100" transform="rotate(315 50 50)" />
+        </svg>
+        <svg id="oval2">
+            <rect rx="50" ry="50" width="220" height="100" transform="rotate(225 50 50)" />
+        </svg>
+    </div>
+
 
 </body>
 </html>
