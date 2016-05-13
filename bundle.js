@@ -48,9 +48,23 @@ function makePDF(PDFDocument, blobStream, lorem, iframe) {
      
   // end and display the document in the iframe to the right
   doc.end();
-  stream.on('finish', function() {
-    iframe.src = stream.toBlobURL('application/pdf');
-  });
+
+  //stream.on('finish', function () {
+  //  iframe.src = stream.toBlobURL('application/pdf');
+  //});
+
+  stream.on('finish', function () {
+  // IE doesn't support blob urls or data-uris, so force a download
+  if (window.navigator.msSaveOrOpenBlob) {
+    var blob = stream.toBlob('application/pdf')
+    window.navigator.msSaveOrOpenBlob(blob, 'output.pdf');
+  }
+  else {
+    var url = stream.toBlobURL('application/pdf')
+    iframe.src = url
+  }
+})
+
 }
 
 var editor = ace.edit('editor');
