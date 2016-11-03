@@ -593,8 +593,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.animateDiv.style.left = scrollLeft + 'px';
 	        document.body.appendChild(this.animateDiv);
 	        //capture ComputedStyle every millisecond
-	        this.scrollSyncTimer = setInterval(function () {
+	        this.scrollSyncTimer = setInterval(function () {		
 	            var num = parseFloat(getComputedStyle(_this.animateDiv).left);
+			console.log('scrollSyncTimer:'+num);
 	            _this.scrollDiv.scrollLeft = num;
 	        }, 1);
 	        //don't let the browser optimize the setting of 'this.animateDiv.style.left' - we need this to change values to trigger the CSS animation
@@ -630,7 +631,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    }))
 	                )
 	            ), 
-	            React.createElement("button", {disabled: !this.state.nextButtonEnabled, className: "scroll next", onClick: function () { alert('scrollnext'); return _this.scrollBy(1); }}, 
+	            React.createElement("button", {disabled: !this.state.nextButtonEnabled, className: "scroll next", onClick: function () { return _this.scrollBy(1); }}, 
 	                React.createElement("svg", null, 
 	                    React.createElement("path", {d: "M 12.5 22 L 10 19.5 L 15.5 14 L 10 8.5 L 12.5 6 L 20.5 14 L 12.5 22 Z"})
 	                )
