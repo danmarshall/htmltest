@@ -518,16 +518,19 @@
 /* animation */
 
     .wc-animate-scroll {
+        position:absolute;
         left: 0;
         transition: left .8s ease;
     }
 
     .wc-animate-scroll-rapid {
+        position:absolute;
         left: 0;
         transition: left .4s ease;
     }
 
     .wc-animate-scroll-near {
+        position:absolute;
         left: 0;
         transition: left .5s ease-in-out;
     }
