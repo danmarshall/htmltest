@@ -577,11 +577,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        var unit = increment * this.itemWidth;
 	        var scrollLeft = this.scrollDiv.scrollLeft;
+		    console.log('scrollLeft:'+scrollLeft);
 	        var dest = scrollLeft + unit;
+		    console.log('dest:'+dest);
 	        //don't exceed boundaries
 	        dest = Math.max(dest, 0);
 	        dest = Math.min(dest, this.scrollDiv.scrollWidth - this.scrollDiv.offsetWidth);
-	        if (scrollLeft == dest)
+		console.log('dest:'+dest);
+		    if (scrollLeft == dest)
 	            return;
 	        //use proper easing curve when distance is small
 	        if (Math.abs(dest - scrollLeft) < this.itemWidth) {
