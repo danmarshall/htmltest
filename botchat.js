@@ -415,6 +415,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	"use strict";
 	var React = __webpack_require__(3);
 	var Chat_1 = __webpack_require__(4);
+	var nonEmpty = function (value, template) {
+	    if (typeof value === 'string' && value.length > 0)
+	        return template;
+	};
 	exports.AttachmentView = function (props) {
 	    var state = props.store.getState();
 	    var onClickButton = function (type, value) {
@@ -493,6 +497,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        case "image/jpeg":
 	        case "image/gif":
 	            return imageWithOnLoad(props.attachment.contentUrl);
+	        case "video/mp4":
+	            return (React.createElement("div", {className: 'wc-card video'}, 
+	                React.createElement("video", {src: props.attachment.contentUrl, poster: props.attachment.thumbnailUrl, controls: true}), 
+	                nonEmpty(props.attachment.name, React.createElement("h1", null, props.attachment.name))));
 	        default:
 	            return React.createElement("span", null);
 	    }
@@ -577,14 +585,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        var unit = increment * this.itemWidth;
 	        var scrollLeft = this.scrollDiv.scrollLeft;
-		    console.log('scrollLeft:'+scrollLeft);
 	        var dest = scrollLeft + unit;
-		    console.log('dest:'+dest);
 	        //don't exceed boundaries
 	        dest = Math.max(dest, 0);
 	        dest = Math.min(dest, this.scrollDiv.scrollWidth - this.scrollDiv.offsetWidth);
-		console.log('dest:'+dest);
-		    if (scrollLeft == dest)
+	        if (scrollLeft == dest)
 	            return;
 	        //use proper easing curve when distance is small
 	        if (Math.abs(dest - scrollLeft) < this.itemWidth) {
@@ -596,9 +601,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.animateDiv.style.left = scrollLeft + 'px';
 	        document.body.appendChild(this.animateDiv);
 	        //capture ComputedStyle every millisecond
-	        this.scrollSyncTimer = setInterval(function () {		
+	        this.scrollSyncTimer = setInterval(function () {
 	            var num = parseFloat(getComputedStyle(_this.animateDiv).left);
-			console.log('scrollSyncTimer:'+num);
 	            _this.scrollDiv.scrollLeft = num;
 	        }, 1);
 	        //don't let the browser optimize the setting of 'this.animateDiv.style.left' - we need this to change values to trigger the CSS animation
