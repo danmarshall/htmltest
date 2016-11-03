@@ -630,7 +630,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    }))
 	                )
 	            ), 
-	            React.createElement("button", {disabled: !this.state.nextButtonEnabled, className: "scroll next", onClick: function () { return _this.scrollBy(1); }}, 
+	            React.createElement("button", {disabled: !this.state.nextButtonEnabled, className: "scroll next", onClick: function () { alert('scrollnext'); return _this.scrollBy(1); }}, 
 	                React.createElement("svg", null, 
 	                    React.createElement("path", {d: "M 12.5 22 L 10 19.5 L 15.5 14 L 10 8.5 L 12.5 6 L 20.5 14 L 12.5 22 Z"})
 	                )
