@@ -19,9 +19,13 @@
         <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.min.js"></script>
         <script src="botchat.js"></script>
         <script>
-            var secretOrToken = {secret: '-S3pI52PjhA.cwA.gtc.YzL-0nkwdJqqSFFzQDTaTW9fzTvUtXfoYArBNQS9HU4'};
+            
+            params['dl3'] = 'https://ic-directline-scratch.azurewebsites.net';
+            params['segment'] = 'v3/directline';
+            params['s'] = 'R9i5KxgSHDg.cwA.r8A.SV1JeSldHUIsRVgUm6L0qH29NvPRmTT4vZg6m171hOs';
+
             ReactDOM.render(React.createElement(BotChat.App, {
-                botConnection: new BotChat.DirectLine(secretOrToken),
+                botConnection: new BotChat.DirectLine3(secretOrToken, params["dl3"], params["segment"]),
                 user: { id: 'userid', name: 'username' } // for convenient testing/demo - should normally be overwritten by below
                 // ADD MORE CONFIG HERE
             }), document.getElementById("BotChatGoesHere"));
