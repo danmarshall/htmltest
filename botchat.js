@@ -238,6 +238,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	}(React.Component));
 	exports.Chat = Chat;
 	exports.sendMessage = function (store, text) {
+	    if (!text || typeof text !== 'string' || text.trim().length === 0)
+	        return;
 	    var state = store.getState();
 	    var sendId = state.history.sendCounter;
 	    store.dispatch({ type: 'Send_Message', activity: {
@@ -359,7 +361,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                    React.createElement("path", {className: "point-left", d: "m0,6 l6 6 v-12 z"}), 
 	                                    React.createElement("path", {className: "point-right", d: "m6,6 l-6 6 v-12 z"})), 
 	                                React.createElement(ActivityView_1.ActivityView, {store: _this.props.store, activity: activity, onImageLoad: _this.onImageLoad})), 
-	                            React.createElement("div", {className: "wc-message-from"}, activity.from.id === state.connection.user.id ? 'you' : activity.from.id))
+	                            React.createElement("div", {className: "wc-message-from"}, activity.from.id === state.connection.user.id ? 'you' : activity.from.name || activity.from.id || ''))
 	                    );
 	                }))
 	            )
@@ -420,6 +422,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return template;
 	};
 	exports.AttachmentView = function (props) {
+	    if (!props.attachment)
+	        return;
+	    var att = props.attachment;
 	    var state = props.store.getState();
 	    var onClickButton = function (type, value) {
 	        switch (type) {
@@ -444,40 +449,53 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var imageWithOnLoad = function (url) {
 	        return React.createElement("img", {src: url, onLoad: function () { console.log("local onImageLoad"); props.onImageLoad(); }});
 	    };
+	    var videoWithOnLoad = function (videoUrl, thumbnailUrl, autoPlay, loop) {
+	        return React.createElement("video", {src: videoUrl, poster: thumbnailUrl, autoPlay: autoPlay, controls: true, loop: loop, onLoadedMetadata: function () { console.log("local onVideoLoad"); props.onImageLoad(); }});
+	    };
 	    var attachedImage = function (images) {
 	        return images && imageWithOnLoad(images[0].url);
 	    };
-	    switch (props.attachment.contentType) {
+	    switch (att.contentType) {
 	        case "application/vnd.microsoft.card.hero":
 	            return (React.createElement("div", {className: 'wc-card hero'}, 
-	                attachedImage(props.attachment.content.images), 
-	                React.createElement("h1", null, props.attachment.content.title), 
-	                React.createElement("h2", null, props.attachment.content.subtitle), 
-	                React.createElement("p", null, props.attachment.content.text), 
-	                buttons(props.attachment.content.buttons)));
+	                attachedImage(att.content.images), 
+	                React.createElement("h1", null, att.content.title), 
+	                React.createElement("h2", null, att.content.subtitle), 
+	                React.createElement("p", null, att.content.text), 
+	                buttons(att.content.buttons)));
 	        case "application/vnd.microsoft.card.thumbnail":
 	            return (React.createElement("div", {className: 'wc-card thumbnail'}, 
-	                React.createElement("h1", null, props.attachment.content.title), 
+	                React.createElement("h1", null, att.content.title), 
 	                React.createElement("p", null, 
-	                    attachedImage(props.attachment.content.images), 
-	                    React.createElement("h2", null, props.attachment.content.subtitle), 
-	                    props.attachment.content.text), 
-	                buttons(props.attachment.content.buttons)));
+	                    attachedImage(att.content.images), 
+	                    React.createElement("h2", null, att.content.subtitle), 
+	                    att.content.text), 
+	                buttons(att.content.buttons)));
+	        case "application/vnd.microsoft.card.video":
+	            var thumbnail;
+	            if (att.content.image)
+	                thumbnail = att.content.image.url;
+	            return (React.createElement("div", {className: 'wc-card video'}, 
+	                videoWithOnLoad(att.content.media[0].url, thumbnail, att.content.autostart, att.content.autoloop), 
+	                React.createElement("h1", null, att.content.title), 
+	                React.createElement("h2", null, att.content.subtitle), 
+	                React.createElement("p", null, att.content.text), 
+	                buttons(att.content.buttons)));
 	        case "application/vnd.microsoft.card.signin":
 	            return (React.createElement("div", {className: 'wc-card signin'}, 
-	                React.createElement("h1", null, props.attachment.content.text), 
-	                buttons(props.attachment.content.buttons)));
+	                React.createElement("h1", null, att.content.text), 
+	                buttons(att.content.buttons)));
 	        case "application/vnd.microsoft.card.receipt":
 	            return (React.createElement("div", {className: 'wc-card receipt'}, 
 	                React.createElement("table", null, 
 	                    React.createElement("thead", null, 
 	                        React.createElement("tr", null, 
-	                            React.createElement("th", {colSpan: 2}, props.attachment.content.title)
+	                            React.createElement("th", {colSpan: 2}, att.content.title)
 	                        ), 
-	                        props.attachment.content.facts && props.attachment.content.facts.map(function (fact) { return React.createElement("tr", null, 
+	                        att.content.facts && att.content.facts.map(function (fact) { return React.createElement("tr", null, 
 	                            React.createElement("th", null, fact.key), 
 	                            React.createElement("th", null, fact.value)); })), 
-	                    React.createElement("tbody", null, props.attachment.content.items && props.attachment.content.items.map(function (item) {
+	                    React.createElement("tbody", null, att.content.items && att.content.items.map(function (item) {
 	                        return React.createElement("tr", null, 
 	                            React.createElement("td", null, 
 	                                item.image && imageWithOnLoad(item.image.url), 
@@ -487,20 +505,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    React.createElement("tfoot", null, 
 	                        React.createElement("tr", null, 
 	                            React.createElement("td", null, "Tax"), 
-	                            React.createElement("td", null, props.attachment.content.tax)), 
+	                            React.createElement("td", null, att.content.tax)), 
 	                        React.createElement("tr", {className: "total"}, 
 	                            React.createElement("td", null, "Total"), 
-	                            React.createElement("td", null, props.attachment.content.total))))
+	                            React.createElement("td", null, att.content.total))))
 	            ));
 	        case "image/png":
 	        case "image/jpg":
 	        case "image/jpeg":
 	        case "image/gif":
-	            return imageWithOnLoad(props.attachment.contentUrl);
+	            return imageWithOnLoad(att.contentUrl);
 	        case "video/mp4":
-	            return (React.createElement("div", {className: 'wc-card video'}, 
-	                React.createElement("video", {src: props.attachment.contentUrl, poster: props.attachment.thumbnailUrl, controls: true}), 
-	                nonEmpty(props.attachment.name, React.createElement("h1", null, props.attachment.name))));
+	            return videoWithOnLoad(att.contentUrl);
 	        default:
 	            return React.createElement("span", null);
 	    }
@@ -2560,13 +2576,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _super.call(this, props);
 	    }
 	    Shell.prototype.onKeyPress = function (e) {
-	        if (e.key === 'Enter' && this.textInput.value.length > 0)
+	        if (e.key === 'Enter')
 	            Chat_1.sendMessage(this.props.store, this.textInput.value);
 	    };
 	    Shell.prototype.onClickSend = function () {
 	        this.textInput.focus();
-	        if (this.textInput.value.length > 0)
-	            Chat_1.sendMessage(this.props.store, this.textInput.value);
+	        Chat_1.sendMessage(this.props.store, this.textInput.value);
 	    };
 	    Shell.prototype.onClickFile = function (files) {
 	        this.textInput.focus();
