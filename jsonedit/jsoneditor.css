@@ -897,8 +897,7 @@ table.jsoneditor-search button {
   padding: 0;
   margin: 0;
   border: none;
-  background: url("
-  jsoneditor-icons.svg");
+  background: url("jsoneditor-icons.svg");
   vertical-align: top;
 }
 
