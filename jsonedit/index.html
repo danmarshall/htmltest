@@ -13,7 +13,17 @@
     <script>
         // create the editor
         var container = document.getElementById("jsoneditor");
-        var options = {};
+        var options = {
+            mode: 'tree',
+            modes: ['code', 'form', 'text', 'tree', 'view'], // allowed modes
+            onError: function (err) {
+              alert(err.toString());
+            },
+            onModeChange: function (newMode, oldMode) {
+              console.log('Mode switched from', oldMode, 'to', newMode);
+            }
+        };
+        
         var editor = new JSONEditor(container, options);
 
         // set json
