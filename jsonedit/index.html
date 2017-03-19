@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 
     <link href="jsoneditor.min.css" rel="stylesheet" type="text/css">
-    <script src="jsoneditor.min.js"></script>
+    <script src="jsoneditor-minimalist.min.js"></script>
 </head>
 <body>
     <div id="jsoneditor" style="width: 400px; height: 400px;"></div>
@@ -15,7 +15,7 @@
         var container = document.getElementById("jsoneditor");
         var options = {
             mode: 'tree',
-            modes: ['code', 'form', 'text', 'tree', 'view'], // allowed modes
+            modes: ['form', 'tree'], // allowed modes
             onError: function (err) {
               alert(err.toString());
             },
