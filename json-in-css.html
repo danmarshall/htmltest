@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<title>readin JSON embedded in CSS</title>
+<style>
+#div1 {
+  background-image: url("data:text/json;charset=utf-8,{\"foo\":\"bar\",\"z\":{\"x\":7}}");
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<div id="div1"></div>
+
+<script>
+var div1 = document.getElementById('div1');
+var style = window.getComputedStyle(div1);
+var url = style.backgroundImage;
+var json = url.substring(url.indexOf('{'), url.lastIndexOf('}')+1).replace(/\\"/g, '"');
+try {
+	document.writeln(json);
+	var obj = JSON.parse(json);
+	document.writeln('success:' + obj.z.x);
+} catch (e) {
+	document.writeln('fail:' + e);
+}
+</script>
+
+</body>
+</html>
