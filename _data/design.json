@@ -1,0 +1,15 @@
+[
+  {
+    "name": "openjscad-gear",
+    "author": {
+      "name": "Dan Marshall"
+    },
+    "version": "1.0.0",
+    "updated": "2017-12-02T18:51:44.849Z",
+    "commonDependencies": [
+      {
+        "@jscad/csg": "^0.3.7"
+      }
+    ]
+  }
+]
