@@ -12,6 +12,6 @@ x: 7
 <body>
     jsonify page
     {{ page.x }}
-    {{ site.data.designs }}
+    designs: {{ site.data.designs | jsonify }}
 </body>
 </html>
