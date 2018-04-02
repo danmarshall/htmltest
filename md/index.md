@@ -12,10 +12,18 @@ well. did it?
 
 it did! -> http://danmarshall.github.io/htmltest/md/
 
-But can it do script?
+But can it do script? Let's execute the following:
+```
+<script>
+  document.write('yes it can.');
+</script>
+```
+---
 
 <script>
   document.write('yes it can.');
 </script>
+
+---
 
 done.
