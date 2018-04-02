@@ -10,7 +10,7 @@ but what i really wanna know is, are you gonna render html ?
 
 well. did it?
 
-it did! -> http://danmarshall.github.io/htmltest/md/
+it did! -> [http://danmarshall.github.io/htmltest/md/](http://danmarshall.github.io/htmltest/md/)
 
 But can it do script? Let's execute the following:
 ```
