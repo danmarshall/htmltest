@@ -15,7 +15,7 @@ it did! -> http://danmarshall.github.io/htmltest/md/
 But can it do script?
 
 <script>
-  document.write('yes it can.')'
+  document.write('yes it can.');
 </script>
 
 done.
