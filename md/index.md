@@ -12,6 +12,16 @@ well. did it?
 
 it did! -> [http://danmarshall.github.io/htmltest/md/](http://danmarshall.github.io/htmltest/md/)
 
+<script>
+  function evalLastCodeBlock() {
+    var scriptCodeNode = Array.prototype.slice.call(document.querySelectorAll("code"), -1)[0];
+    var clone = scriptCodeNode.cloneNode(true);
+    clone.removeChild(clone.children[0]);
+    clone.removeChild(clone.children[clone.children.length - 1]);
+    eval(clone.innerText);
+  }
+</script>
+
 But can it do script? Let's execute the following:
 ```html
 <script>
@@ -21,7 +31,7 @@ But can it do script? Let's execute the following:
 ---
 
 <script>
-  document.write('yes it can.');
+  evalLastCodeBlock();
 </script>
 
 ---
@@ -29,20 +39,13 @@ But can it do script? Let's execute the following:
 Now here is a 2nd code block:
 ```html
 <script>
-  var scriptCodeNode = Array.prototype.slice.call(document.querySelectorAll("code"), -1)[0];
-  var spans = Array.prototype.slice.call(scriptCodeNode.querySelectorAll("span:not(.nt)"));
-  var spanText = spans.map(span => span.innerText).join('');
-  document.write(spanText);
-  eval(spanText);
+  document.write('code block 2.');
 </script>
 ```
 ---
 
 <script>
-  var scriptCodeNode = Array.prototype.slice.call(document.querySelectorAll("code"), -1)[0];
-  var spans = Array.prototype.slice.call(scriptCodeNode.querySelectorAll("span:not(.nt)"));
-  var spanText = spans.map(span => span.innerText).join('');
-  document.write(spanText);
+  evalLastCodeBlock();
 </script>
 
 ---
