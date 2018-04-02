@@ -43,7 +43,6 @@ Now here is a 2nd code block:
   var spans = Array.prototype.slice.call(scriptCodeNode.querySelectorAll("span:not(.nt)"));
   var spanText = spans.map(span => span.innerText).join('');
   document.write(spanText);
-  eval(spanText);
 </script>
 
 ---
