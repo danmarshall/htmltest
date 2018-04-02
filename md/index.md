@@ -13,7 +13,7 @@ well. did it?
 it did! -> [http://danmarshall.github.io/htmltest/md/](http://danmarshall.github.io/htmltest/md/)
 
 But can it do script? Let's execute the following:
-```
+```html
 <script>
   document.write('yes it can.');
 </script>
@@ -22,6 +22,20 @@ But can it do script? Let's execute the following:
 
 <script>
   document.write('yes it can.');
+</script>
+
+---
+
+Now here is a 2nd code block:
+```html
+<script>
+  document.write('2nd code block executed.');
+</script>
+```
+---
+
+<script>
+  document.write('2nd code block executed.');
 </script>
 
 ---
