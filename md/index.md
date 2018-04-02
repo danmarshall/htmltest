@@ -29,13 +29,21 @@ But can it do script? Let's execute the following:
 Now here is a 2nd code block:
 ```html
 <script>
-  document.write('2nd code block executed.');
+  var scriptCodeNode = Array.prototype.slice.call(document.querySelectorAll("code"), -1)[0];
+  var spans = Array.prototype.slice.call(scriptCodeNode.querySelectorAll("span:not(.nt)"));
+  var spanText = spans.map(span => span.innerText).join('');
+  document.write(spanText);
+  eval(spanText);
 </script>
 ```
 ---
 
 <script>
-  document.write('2nd code block executed.');
+  var scriptCodeNode = Array.prototype.slice.call(document.querySelectorAll("code"), -1)[0];
+  var spans = Array.prototype.slice.call(scriptCodeNode.querySelectorAll("span:not(.nt)"));
+  var spanText = spans.map(span => span.innerText).join('');
+  document.write(spanText);
+  eval(spanText);
 </script>
 
 ---
